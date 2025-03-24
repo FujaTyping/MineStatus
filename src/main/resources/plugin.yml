@@ -1,0 +1,8 @@
+name: MineStats
+version: '1.0-SNAPSHOT'
+main: me.siraphop.mineStats.MineStats
+api-version: '1.21'
+load: STARTUP
+authors: [ FujaTying ]
+description: A simple server stats for Minecraft server
+website: https://github.com/FujaTyping/MineStatus
