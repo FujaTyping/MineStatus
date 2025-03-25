@@ -6,3 +6,12 @@ load: STARTUP
 authors: [ FujaTying ]
 description: A simple server stats for Minecraft server
 website: https://github.com/FujaTyping/MineStatus
+commands:
+  mstats:
+    description: Displays server resource usage
+    usage: /mstats
+    permission: mstats.view
+permissions:
+  mstats.view:
+    description: Allows viewing server resource usage
+    default: true
