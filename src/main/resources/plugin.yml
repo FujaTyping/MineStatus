@@ -11,7 +11,14 @@ commands:
     description: Displays server resource usage
     usage: /mstats
     permission: mstats.view
+  mdstats:
+    usage: /mdstats [actionbar/tab/off]
+    description: Show server stats
+    permission: mstats.setdisplay
 permissions:
   mstats.view:
     description: Allows viewing server resource usage
+    default: true
+  mstats.setdisplay:
+    description: Allows set position of viewing server resource usage
     default: true

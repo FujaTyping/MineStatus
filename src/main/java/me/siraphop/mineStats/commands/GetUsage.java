@@ -63,11 +63,11 @@ public class GetUsage implements CommandExecutor {
 
             String message = String.format(
                     "§e===== Server Resource Usage =====\n" +
-                            "§aCPU Name: §f%s\n" +
-                            "§aCPU Load: §f%.2f%%\n" +
-                            "§aMemory Usage: §f%.2f GB / %.2f GB (%.2f%%)\n" +
-                            "§aDisk Usage: §f%d GB / %d GB (%.2f%%)\n" +
-                            "§aPlayers: §f%d / %d",
+                    "§aCPU Name: §f%s\n" +
+                    "§aCPU Load: §f%.2f%%\n" +
+                    "§aMemory Usage: §f%.2f GB / %.2f GB (%.2f%%)\n" +
+                    "§aDisk Usage: §f%d GB / %d GB (%.2f%%)\n" +
+                    "§aPlayers: §f%d / %d",
                     cpuName, cpuLoad,
                     usedMemoryGB, totalMemoryGB, memoryUsagePercent,
                     usedDiskSpace, totalDiskSpace, diskUsagePercent,

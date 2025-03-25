@@ -2,7 +2,9 @@ package me.siraphop.mineStats;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
+
 import me.siraphop.mineStats.commands.GetUsage;
+import me.siraphop.mineStats.commands.SetDisplay;
 
 public final class MineStats extends JavaPlugin {
 
@@ -21,5 +23,6 @@ public final class MineStats extends JavaPlugin {
 
     public void loadCommand() {
         getCommand("mstats").setExecutor(new GetUsage());
+        getCommand("mdstats").setExecutor(new SetDisplay());
     }
 }
