@@ -24,5 +24,6 @@ public final class MineStats extends JavaPlugin {
     public void loadCommand() {
         getCommand("mstats").setExecutor(new GetUsage());
         getCommand("mdstats").setExecutor(new SetDisplay());
+        logger.info("All commands has been loaded!");
     }
 }
