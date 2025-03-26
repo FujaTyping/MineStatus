@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -101,12 +102,18 @@ public class SetDisplay implements CommandExecutor, Listener {
         playerData.set(player.getUniqueId().toString(), mode.name());
         savePlayerData();
         updateDisplayForPlayer(player, mode);
+
+        player.playSound(player.getLocation(), org.bukkit.Sound.BLOCK_NOTE_BLOCK_PLING, 1.0F, 1.5F);
     }
 
     private void removeDisplayMode(Player player) {
         displayModes.remove(player.getUniqueId());
         playerData.set(player.getUniqueId().toString(), null);
         savePlayerData();
+
+        player.playSound(player.getLocation(), org.bukkit.Sound.BLOCK_NOTE_BLOCK_PLING, 1.0F, 0.5F);
+
+        player.setPlayerListHeaderFooter("", "");
     }
 
     private void savePlayerData() {

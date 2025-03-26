@@ -1,6 +1,7 @@
 package me.siraphop.mineStats.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -63,11 +64,11 @@ public class GetUsage implements CommandExecutor {
 
             String message = String.format(
                     "§e===== Server Resource Usage =====\n" +
-                    "§aCPU Name: §f%s\n" +
-                    "§aCPU Load: §f%.2f%%\n" +
-                    "§aMemory Usage: §f%.2f GB / %.2f GB (%.2f%%)\n" +
-                    "§aDisk Usage: §f%d GB / %d GB (%.2f%%)\n" +
-                    "§aPlayers: §f%d / %d",
+                            "§aCPU Name: §f%s\n" +
+                            "§aCPU Load: §f%.2f%%\n" +
+                            "§aMemory Usage: §f%.2f GB / %.2f GB (%.2f%%)\n" +
+                            "§aDisk Usage: §f%d GB / %d GB (%.2f%%)\n" +
+                            "§aPlayers: §f%d / %d",
                     cpuName, cpuLoad,
                     usedMemoryGB, totalMemoryGB, memoryUsagePercent,
                     usedDiskSpace, totalDiskSpace, diskUsagePercent,
@@ -75,7 +76,10 @@ public class GetUsage implements CommandExecutor {
             );
 
             if (sender instanceof Player) {
-                ((Player) sender).sendMessage(message);
+                Player player = (Player) sender;
+                player.sendMessage(message);
+
+                player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 1.0F, 1.0F);
             } else {
                 sender.sendMessage(message);
             }
